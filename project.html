@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<style>
+.lds-heart {
+  display:block;
+  width: 15vw;
+  height: 15vw;
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+  margin-right:2.5vw;
+  margin-left:2.5vw;
+}
+.lds-heart div {
+  top: 40%;
+  left: 40%;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background: #fff;
+  animation: lds-heart 1s ease-in-out infinite;
+}
+.lds-heart div:after,
+.lds-heart div:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.lds-heart div:before {
+  left: -80%;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -80%;
+  border-radius: 50% 50% 0 0;
+}
+
+@keyframes lds-heart {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.25);
+  }
+  66% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.load-cover > .lds-heart:nth-child(2) > div {
+  animation-delay: 0.25s
+}
+.load-cover > .lds-heart:nth-child(3) > div {
+  animation-delay: 0.5s
+}
+
+
+.load-cover{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:red;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  z-index:1;
+}
+
+@keyframes fade {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+html, body{
+  text-align:center;
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  font-family: 'Roboto', sans-serif;
+}
+div.content{
+  background-color:#303030;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+  z-index:0;
+}
+
+div.card-container{
+  text-align:left;
+  width: 90vw; /* 90% of viewport vidth */
+  height: 63.1914894vw; /* ratio = 9/16 * 90 = 50.625 */
+  background-color: pink;
+  max-height: 90vh;
+  max-width: 128.181818vh;
+  position:relative;
+  border-radius:15px;
+  box-sizing:border-box;
+  border: 5px solid #E75480;
+  perspective: 1000px;
+}
+
+
+
+.flip-card-inner {
+  position:absolute;
+  width:100%;
+  height:100%;
+  right:0;
+  transition: transform 0.6s ease-out;
+  transform-style: preserve-3d;
+  border-radius: 10px;
+  background-color:transparent;
+}
+
+.card-container:hover .flip-card-inner {
+  transform: rotateY(-180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(-180deg);
+}
+</style>
+</head>
+<body>
+<div class="load-cover">
+<div class="lds-heart"><div></div></div>
+<div class="lds-heart"><div></div></div>
+<div class="lds-heart"><div></div></div>
+</div>
+<div class="content">
+<h1 style="letter-spacing: 0.5px">Press the "Enter" key to enter full screen.</h1>
+<div style="display:flex;align-items:center;justify-content: center; height:100%;width:100%;margin-bottom:21.440px;">
+<div class="card-container">
+<img src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Valentine%27s-Day-PNG/Transparent_PNG_Background_with_Hearts.png?m=1434276631" style="width:100%;height:100%;position:absolute;object-fit:cover;border-radius: 10px;">
+
+
+<div style="position:absolute;width:calc(50% + 0000000000.1px);height:100%;right:0;overflow:hidden;" class="flip-card-front">
+<img src="https://i.ibb.co/BnNkHcf/Eshaan-Debnath-El-D-a-de-San-Valent-n-Proyecto.png" style="width:200%;height:100%;position:absolute;right:0;object-fit:cover;border-radius: 0 10px 10px 0;">
+</div>
+
+
+<div class="flip-card-inner">
+
+
+<div style="position:absolute;width:50%;height:100%;right:0;" class="flip-card-front">
+<img src="https://i.ibb.co/BnNkHcf/Eshaan-Debnath-El-D-a-de-San-Valent-n-Proyecto.png" style="width:100%;height:100%;position:absolute;object-fit:cover;border-radius: 0 10px 10px 0;">
+</div>
+
+<div style="position:absolute;width:50%;height:100%;overflow:hidden;right:0;" class="flip-card-back">
+<img src="https://i.ibb.co/BnNkHcf/Eshaan-Debnath-El-D-a-de-San-Valent-n-Proyecto.png" style="width:200%;height:100%;position:absolute;object-fit:cover;border-radius: 10px;">
+</div>
+
+</div>
+
+<!--
+<div style="position:absolute;width:100%;height:100%;right:0;">
+<img src="https://i.ibb.co/BnNkHcf/Eshaan-Debnath-El-D-a-de-San-Valent-n-Proyecto.png" style="width:100%;height:100%;position:absolute;object-fit:cover;border-radius: 0 10px 10px 0;">
+</div>
+-->
+
+</div>
+</div>
+
+<script>
+document.addEventListener("keypress", function(e) {
+  if (e.keyCode === 13) {
+    toggleFullScreen();
+  }
+}, false);
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      document.querySelector("h1").innerHTML="Press the \"Enter\" key to exit full screen."
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+      document.querySelector("h1").innerHTML="Press the \"Enter\" key to enter full screen."
+    }
+  }
+}
+</script>
+</div>
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function(){setTimeout(function(){
+document.getElementsByClassName("load-cover")[0].style.animation="fade 0.5s ease-in-out"
+document.getElementsByClassName("load-cover")[0].addEventListener("animationend", function(event){
+event.target.style.display="none"
+})
+}, 1500)})
+</script>
+</html>
