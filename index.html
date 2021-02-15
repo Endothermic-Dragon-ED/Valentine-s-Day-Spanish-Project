@@ -142,10 +142,6 @@ div.card-container{
   transform:translate(-25%, 0);
 }
 
-.flip-card-inner.flipped {
-  transform: rotateY(-180deg);
-}
-
 .flip-card-front, .flip-card-back {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -216,18 +212,18 @@ function toggleFullScreen() {
   }
 }
 document.querySelector("button").addEventListener("click", function(event){
-if (document.getElementsByClassName("flip-card-inner")[0].style.transform=="rotateY(180deg)"){
-document.getElementsByClassName("flip-card-inner")[0].style.transform="rotateY(360deg)"
+if (document.getElementsByClassName("flip-card-inner")[0].style.transform=="translate(0, 0) rotateY(-179.99999deg)"){
+document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(0deg)"
 setTimeout(function(){
 document.getElementsByClassName("show-hide")[0].style.display="none"
-document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(-25%, 0)"
+document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(-25%, 0) rotateY(0deg)"
 event.target.innerText="Next >"
 }, 600)
 } else {
 document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0)"
 setTimeout(function(){
 document.getElementsByClassName("show-hide")[0].style.display="block"
-document.getElementsByClassName("flip-card-inner")[0].style.transform="rotateY(180deg)"
+document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(-179.99999deg)"
 event.target.innerText="< Previous"
 }, 600)
 }
