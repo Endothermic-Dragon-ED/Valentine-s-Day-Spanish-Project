@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,6 +93,7 @@
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  cursor:default;
 }
 
 html, body{
@@ -104,7 +104,9 @@ html, body{
   height:100%;
   overflow:hidden;
   font-family: 'Roboto', sans-serif;
-  cursor:default;
+}
+button {
+  cursor:pointer;
 }
 div.content{
   background-color:#303030;
@@ -118,11 +120,7 @@ div.content{
 
 div.card-container{
   text-align:left;
-  width: 90vw;
-  height: 63.1914894vw;
   background-color: pink;
-  max-height: 90vh;
-  max-width: 128.181818vh;
   position:relative;
   border-radius:15px;
   box-sizing:border-box;
@@ -141,9 +139,10 @@ div.card-container{
   transform-style: preserve-3d;
   border-radius: 10px;
   background-color:transparent;
+  transform:translate(-25%, 0);
 }
 
-.card-container:hover .flip-card-inner {
+.flip-card-inner.flipped {
   transform: rotateY(-180deg);
 }
 
@@ -164,13 +163,13 @@ div.card-container{
 <div class="lds-heart"><div></div></div>
 </div>
 <div class="content">
-<h1 style="letter-spacing: 0.5px">Press the "Enter" key to enter full screen.</h1>
-<div style="display:flex;align-items:center;justify-content: center; height:100%;width:100%;margin-bottom:21.440px;">
+<h1 style="letter-spacing: 0.5px;padding-left:50px;padding-right:50px;flex:0">Press the "Enter" key to enter full screen.</h1>
+<div style="display:flex;align-items:center;justify-content: center; height:100%;width:100%;margin-bottom:21.440px;flex:1">
 <div class="card-container">
 <img src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Valentine%27s-Day-PNG/Transparent_PNG_Background_with_Hearts.png?m=1434276631" style="width:100%;height:100%;position:absolute;border-radius: 10px;">
 
 
-<div style="position:absolute;width:calc(50% + 1px);height:100%;right:0;overflow:hidden;border-radius: 0 10px 10px 0;">
+<div class="show-hide" style="position:absolute;width:calc(50% + 1px);height:100%;right:0;overflow:hidden;border-radius: 0 10px 10px 0;display:none;">
 <img src="https://svgshare.com/i/U1c.svg" style="width:calc(200% - 2px);position:absolute;right:0;display:block;">
 </div>
 
@@ -180,6 +179,9 @@ div.card-container{
 
 <div style="position:absolute;width:50%;height:100%;right:0;border-left:2px solid crimson;" class="flip-card-front">
 <img src="https://svgshare.com/i/U32.svg" style="width:100%;height:100%;position:absolute;object-fit:cover;border-radius: 0 10px 10px 0;">
+<img src="https://media3.giphy.com/media/U3b4zO3FM4bLhhoznL/source.gif" style="width:10%;position:absolute;top:49%;left:35%;transform-origin: top left;transform:rotate(-35deg)">
+<img src="https://condaluna.com/assets/stickers/hearts-popping.gif" style="width:20%;position:absolute;top:10%;left:85%;transform-origin: top left;transform:rotate(35deg)">
+<img src="https://media2.giphy.com/media/bkfAIKV8YtHKtVZsIn/source.gif" style="width:25%;position:absolute;top:63%;left:23.5%;transform-origin: top left;transform:rotate(50deg)">
 </div>
 
 <div style="position:absolute;width:50%;height:100%;overflow:hidden;right:0;border-radius:10px;" class="flip-card-back">
@@ -188,6 +190,9 @@ div.card-container{
 
 </div>
 </div>
+</div>
+<div style="margin:15px;margin-bottom:25px;margin-top:0;flex:0;">
+<button style="font-size:32pt;padding:10px 20px;border-radius:7.5px;background-color:red;color:white;border:5px solid salmon">Next &gt;</button>
 </div>
 <script>
 document.addEventListener("keypress", function(e) {
@@ -199,22 +204,62 @@ document.addEventListener("keypress", function(e) {
 function toggleFullScreen() {
   if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
+      window.dispatchEvent(new Event("resize"))
       document.querySelector("h1").innerHTML="Press the \"Enter\" key to exit full screen."
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
+      window.dispatchEvent(new Event("resize"))
       document.querySelector("h1").innerHTML="Press the \"Enter\" key to enter full screen."
     }
   }
 }
+document.querySelector("button").addEventListener("click", function(event){
+if (document.getElementsByClassName("flip-card-inner")[0].style.transform=="rotateY(180deg)"){
+document.getElementsByClassName("flip-card-inner")[0].style.transform="rotateY(360deg)"
+setTimeout(function(){
+document.getElementsByClassName("show-hide")[0].style.display="none"
+document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(-25%, 0)"
+event.target.innerText="Next >"
+}, 600)
+} else {
+document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0)"
+setTimeout(function(){
+document.getElementsByClassName("show-hide")[0].style.display="block"
+document.getElementsByClassName("flip-card-inner")[0].style.transform="rotateY(180deg)"
+event.target.innerText="< Previous"
+}, 600)
+}
+})
+document.querySelector("button").addEventListener("mousedown", function(event){
+event.target.style.backgroundColor="crimson"
+event.target.style.color="#c4c4c4"
+})
+document.querySelector("button").addEventListener("mouseup", function(event){
+event.target.style.backgroundColor="red"
+event.target.style.color="white"
+})
 </script>
 </div>
 </body>
 <script>
+window.addEventListener("resize", function(){
+dimensions=document.getElementsByClassName("card-container")[0].parentNode.getBoundingClientRect()
+document.getElementsByClassName("card-container")[0].style.height="0px"
+document.getElementsByClassName("card-container")[0].style.width="0px"
+if (dimensions.width*8.25 > dimensions.height*11.75){
+document.getElementsByClassName("card-container")[0].style.height=dimensions.height*0.9+"px"
+document.getElementsByClassName("card-container")[0].style.width=dimensions.height*0.9*11.75/8.25+"px"
+} else {
+document.getElementsByClassName("card-container")[0].style.height=dimensions.width*0.9*8.25/11.75+"px"
+document.getElementsByClassName("card-container")[0].style.width=dimensions.width*0.9+"px"
+}
+})
+window.dispatchEvent(new Event("resize"))
 document.addEventListener("DOMContentLoaded", function(){setTimeout(function(){
 document.getElementsByClassName("load-cover")[0].style.animation="fade 0.5s ease-in-out"
 document.getElementsByClassName("load-cover")[0].addEventListener("animationend", function(event){
-event.target.style.display="none"
+event.target.remove()
 })
 }, 1500)})
 </script>
