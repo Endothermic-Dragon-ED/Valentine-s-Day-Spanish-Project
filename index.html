@@ -212,7 +212,7 @@ function toggleFullScreen() {
   }
 }
 document.querySelector("button").addEventListener("click", function(event){
-if (document.getElementsByClassName("flip-card-inner")[0].style.transform=="translate(0, 0) rotateY(-179.99999deg)"){
+if (document.getElementsByClassName("flip-card-inner")[0].style.transform=="translate(0, 0) rotateY(-179.999deg)"){
 document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(0deg)"
 setTimeout(function(){
 document.getElementsByClassName("show-hide")[0].style.display="none"
@@ -223,7 +223,8 @@ event.target.innerText="Next >"
 document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0)"
 setTimeout(function(){
 document.getElementsByClassName("show-hide")[0].style.display="block"
-document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(-179.99999deg)"
+document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(-179.999deg)"
+console.log(1)
 event.target.innerText="< Previous"
 }, 600)
 }
