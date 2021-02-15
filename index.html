@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,6 +85,17 @@
   }
 }
 
+* {
+  outline:0;
+  border:0px solid transparent;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  user-drag: none; 
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 html, body{
   text-align:center;
   margin:0;
@@ -92,6 +104,7 @@ html, body{
   height:100%;
   overflow:hidden;
   font-family: 'Roboto', sans-serif;
+  cursor:default;
 }
 div.content{
   background-color:#303030;
@@ -154,36 +167,28 @@ div.card-container{
 <h1 style="letter-spacing: 0.5px">Press the "Enter" key to enter full screen.</h1>
 <div style="display:flex;align-items:center;justify-content: center; height:100%;width:100%;margin-bottom:21.440px;">
 <div class="card-container">
-<img src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Valentine%27s-Day-PNG/Transparent_PNG_Background_with_Hearts.png?m=1434276631" style="width:100%;height:100%;position:absolute;object-fit:cover;border-radius: 10px;">
+<img src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Valentine%27s-Day-PNG/Transparent_PNG_Background_with_Hearts.png?m=1434276631" style="width:100%;height:100%;position:absolute;border-radius: 10px;">
 
 
-<div style="position:absolute;width:calc(50% + 1px);height:100%;right:0;overflow:hidden;" class="flip-card-front">
-<img src="https://i.ibb.co/BnNkHcf/Eshaan-Debnath-El-D-a-de-San-Valent-n-Proyecto.png" style="width:200%;height:100%;position:absolute;right:0;object-fit:cover;border-radius: 0 10px 10px 0;">
+<div style="position:absolute;width:calc(50% + 1px);height:100%;right:0;overflow:hidden;border-radius: 0 10px 10px 0;">
+<img src="https://svgshare.com/i/U1c.svg" style="width:calc(200% - 2px);position:absolute;right:0;display:block;">
 </div>
 
 
 <div class="flip-card-inner">
 
 
-<div style="position:absolute;width:50%;height:100%;right:0;" class="flip-card-front">
-<img src="https://i.ibb.co/BnNkHcf/Eshaan-Debnath-El-D-a-de-San-Valent-n-Proyecto.png" style="width:100%;height:100%;position:absolute;object-fit:cover;border-radius: 0 10px 10px 0;">
+<div style="position:absolute;width:50%;height:100%;right:0;border-left:2px solid crimson;" class="flip-card-front">
+<img src="https://svgshare.com/i/U32.svg" style="width:100%;height:100%;position:absolute;object-fit:cover;border-radius: 0 10px 10px 0;">
 </div>
 
-<div style="position:absolute;width:50%;height:100%;overflow:hidden;right:0;" class="flip-card-back">
-<img src="https://i.ibb.co/BnNkHcf/Eshaan-Debnath-El-D-a-de-San-Valent-n-Proyecto.png" style="width:200%;height:100%;position:absolute;object-fit:cover;border-radius: 10px;">
+<div style="position:absolute;width:50%;height:100%;overflow:hidden;right:0;border-radius:10px;" class="flip-card-back">
+<img src="https://svgshare.com/i/U1c.svg" style="left:0;width:200%;position:absolute;display:block;">
 </div>
-
-</div>
-
-<!--
-<div style="position:absolute;width:100%;height:100%;right:0;">
-<img src="https://i.ibb.co/BnNkHcf/Eshaan-Debnath-El-D-a-de-San-Valent-n-Proyecto.png" style="width:100%;height:100%;position:absolute;object-fit:cover;border-radius: 0 10px 10px 0;">
-</div>
--->
 
 </div>
 </div>
-
+</div>
 <script>
 document.addEventListener("keypress", function(e) {
   if (e.keyCode === 13) {
