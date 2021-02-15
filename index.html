@@ -1,156 +1,10 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <style>
-.lds-heart {
-  display:block;
-  width: 15vw;
-  height: 15vw;
-  transform: rotate(45deg);
-  transform-origin: 50% 50%;
-  margin-right:2.5vw;
-  margin-left:2.5vw;
-}
-.lds-heart div {
-  top: 40%;
-  left: 40%;
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  background: #fff;
-  animation: lds-heart 1s ease-in-out infinite;
-}
-.lds-heart div:after,
-.lds-heart div:before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-}
-.lds-heart div:before {
-  left: -80%;
-  border-radius: 50% 0 0 50%;
-}
-.lds-heart div:after {
-  top: -80%;
-  border-radius: 50% 50% 0 0;
-}
-
-@keyframes lds-heart {
-  0% {
-    transform: scale(1);
-  }
-  33% {
-    transform: scale(1.25);
-  }
-  66% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.load-cover > .lds-heart:nth-child(2) > div {
-  animation-delay: 0.25s
-}
-.load-cover > .lds-heart:nth-child(3) > div {
-  animation-delay: 0.5s
-}
-
-
-.load-cover{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-color:red;
-  display:flex;
-  align-items:center;
-  justify-content: center;
-  z-index:1;
-}
-
-@keyframes fade {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
-}
-
-* {
-  outline:0;
-  border:0px solid transparent;
-  -webkit-user-drag: none;
-  -moz-user-select: none;
-  user-drag: none; 
-  user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  cursor:default;
-}
-
-html, body{
-  text-align:center;
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  font-family: 'Roboto', sans-serif;
-}
-button {
-  cursor:pointer;
-}
-div.content{
-  background-color:#303030;
-  color:white;
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  height:100%;
-  z-index:0;
-}
-
-div.card-container{
-  text-align:left;
-  background-color: pink;
-  position:relative;
-  border-radius:15px;
-  box-sizing:border-box;
-  border: 5px solid #E75480;
-  perspective: 1000px;
-}
-
-
-
-.flip-card-inner {
-  position:absolute;
-  width:100%;
-  height:100%;
-  right:0;
-  transition: transform 0.6s ease-out;
-  transform-style: preserve-3d;
-  border-radius: 10px;
-  background-color:transparent;
-  transform:translate(-25%, 0);
-}
-
-.flip-card-front, .flip-card-back {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-back {
-  transform: rotateY(-180deg);
-}
+.lds-heart{display:block;width:15vw;height:15vw;transform:rotate(45deg);transform-origin:50% 50%;margin-right:2.5vw;margin-left:2.5vw}.lds-heart div{top:40%;left:40%;position:absolute;width:40%;height:40%;background:#fff;animation:lds-heart 1s ease-in-out infinite}.lds-heart div:after,.lds-heart div:before{content:"";position:absolute;display:block;width:100%;height:100%;background:#fff}.lds-heart div:before{left:-80%;border-radius:50% 0 0 50%}.lds-heart div:after{top:-80%;border-radius:50% 50% 0 0}@keyframes lds-heart{0%{transform:scale(1)}33%{transform:scale(1.25)}66%{transform:scale(1)}100%{transform:scale(1)}}.load-cover>.lds-heart:nth-child(2)>div{animation-delay:.25s}.load-cover>.lds-heart:nth-child(3)>div{animation-delay:.5s}.load-cover{position:absolute;top:0;left:0;width:100%;height:100%;background-color:red;display:flex;align-items:center;justify-content:center;z-index:1}@keyframes fade{0%{opacity:1}100%{opacity:0}}*{outline:0;border:0 solid transparent;-webkit-user-drag:none;-moz-user-select:none;user-drag:none;user-select:none;-webkit-user-select:none;-ms-user-select:none;cursor:default}body,html{text-align:center;margin:0;padding:0;width:100%;height:100%;overflow:hidden;font-family:Roboto,sans-serif}button{cursor:pointer}.content{background-color:#303030;color:#fff;display:flex;flex-direction:column;width:100%;height:100%;z-index:0}.card-container{text-align:left;background-color:pink;position:relative;border-radius:15px;box-sizing:border-box;border:5px solid #e75480;perspective:1000px}.flip-card-inner{position:absolute;width:100%;height:100%;right:0;transition:transform .6s ease-out;transform-style:preserve-3d;border-radius:10px;background-color:transparent;transform:translate(-25%,0)}.flip-card-back,.flip-card-front{-webkit-backface-visibility:hidden;backface-visibility:hidden}.flip-card-back{transform:rotateY(-180deg)}
 </style>
 </head>
 <body>
@@ -172,27 +26,19 @@ Your browser does not support audio. Tested on chrome and Microsoft Edge.
 <div style="display:flex;align-items:center;justify-content: center; height:100%;width:100%;margin:0;flex:1">
 <div class="card-container">
 <img src="Hearts Background.png" style="width:100%;height:100%;position:absolute;border-radius: 10px;">
-
-
 <div class="show-hide" style="position:absolute;width:calc(50% + 1px);height:100%;right:0;overflow:hidden;border-radius: 0 10px 10px 0;display:none;">
 <img src="Inner Content.svg" style="width:calc(200% - 2px);position:absolute;right:0;display:block;">
 </div>
-
-
 <div class="flip-card-inner">
-
-
 <div style="position:absolute;width:50%;height:100%;right:0;border-left:2px solid crimson;" class="flip-card-front">
 <img src="Title Content.svg" style="width:100%;height:100%;position:absolute;object-fit:cover;border-radius: 0 10px 10px 0;">
 <img src="GIF1.gif" style="width:10%;position:absolute;top:49%;left:35%;transform-origin: top left;transform:rotate(-35deg)">
 <img src="GIF2.gif" style="width:20%;position:absolute;top:10%;left:85%;transform-origin: top left;transform:rotate(35deg)">
 <img src="GIF3.gif" style="width:25%;position:absolute;top:63%;left:23.5%;transform-origin: top left;transform:rotate(50deg)">
 </div>
-
 <div style="position:absolute;width:50%;height:100%;overflow:hidden;right:0;border-radius:10px;" class="flip-card-back">
 <img src="Inner Content.svg" style="left:0;width:200%;position:absolute;display:block;">
 </div>
-
 </div>
 </div>
 </div>
@@ -200,73 +46,16 @@ Your browser does not support audio. Tested on chrome and Microsoft Edge.
 <button style="font-size:32pt;padding:10px 20px;border-radius:7.5px;background-color:red;color:white;border:5px solid salmon">Next &gt;</button>
 </div>
 <script>
-document.addEventListener("keypress", function(e) {
-  if (e.keyCode === 13) {
-    e.preventDefault()
-    toggleFullScreen();
-  }
-}, false);
-
-function toggleFullScreen() {
-  if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-      window.dispatchEvent(new Event("resize"))
-      document.querySelector("h1").innerHTML="Press the \"Enter\" key to exit full screen."
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-      window.dispatchEvent(new Event("resize"))
-      document.querySelector("h1").innerHTML="Press the \"Enter\" key to enter full screen."
-    }
-  }
-}
-document.querySelector("button").addEventListener("click", function(event){
-if (parseInt(document.getElementsByClassName("flip-card-inner")[0].style.transform.replace(/[^0-9\.-]/g, ""))==0){
-document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(0deg)"
-setTimeout(function(){
-document.getElementsByClassName("show-hide")[0].style.display="none"
-document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(-25%, 0) rotateY(0deg)"
-event.target.innerText="Next >"
-}, 600)
-} else {
-document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0)"
-setTimeout(function(){
-document.getElementsByClassName("show-hide")[0].style.display="block"
-document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(-179.999deg)"
-event.target.innerText="< Previous"
-}, 600)
-}
-})
-document.querySelector("button").addEventListener("mousedown", function(event){
-event.target.style.backgroundColor="crimson"
-event.target.style.color="#c4c4c4"
-})
-document.querySelector("button").addEventListener("mouseup", function(event){
-event.target.style.backgroundColor="red"
-event.target.style.color="white"
-})
+document.addEventListener("keypress",function(a){13===a.keyCode&&((a.preventDefault(),document.fullscreenElement)?document.exitFullscreen&&(document.exitFullscreen(),window.dispatchEvent(new Event("resize")),document.querySelector("h1").innerHTML='Press the "Enter" key to enter full screen.'):(document.documentElement.requestFullscreen(),window.dispatchEvent(new Event("resize")),document.querySelector("h1").innerHTML='Press the "Enter" key to exit full screen.'))},!1);
+document.querySelector("button").addEventListener("click",function(a){0==parseInt(document.getElementsByClassName("flip-card-inner")[0].style.transform.replace(/[^0-9\.-]/g,""))?(document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(0deg)",setTimeout(function(){document.getElementsByClassName("show-hide")[0].style.display="none";document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(-25%, 0) rotateY(0deg)";a.target.innerText="Next >"},
+600)):(document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0)",setTimeout(function(){document.getElementsByClassName("show-hide")[0].style.display="block";document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(-179.999deg)";a.target.innerText="< Previous"},600))});document.querySelector("button").addEventListener("mousedown",function(a){a.target.style.backgroundColor="crimson";a.target.style.color="#c4c4c4"});
+document.querySelector("button").addEventListener("mouseup",function(a){a.target.style.backgroundColor="red";a.target.style.color="white"});
 </script>
 </div>
 </body>
 <script>
-window.addEventListener("resize", function(){
-dimensions=document.getElementsByClassName("card-container")[0].parentNode.getBoundingClientRect()
-document.getElementsByClassName("card-container")[0].style.height="0px"
-document.getElementsByClassName("card-container")[0].style.width="0px"
-if (dimensions.width*8.25 > dimensions.height*11.75){
-document.getElementsByClassName("card-container")[0].style.height=dimensions.height*0.9+"px"
-document.getElementsByClassName("card-container")[0].style.width=dimensions.height*0.9*11.75/8.25+"px"
-} else {
-document.getElementsByClassName("card-container")[0].style.height=dimensions.width*0.9*8.25/11.75+"px"
-document.getElementsByClassName("card-container")[0].style.width=dimensions.width*0.9+"px"
-}
-})
-window.dispatchEvent(new Event("resize"))
-document.addEventListener("DOMContentLoaded", function(){setTimeout(function(){
-document.getElementsByClassName("load-cover")[0].style.animation="fade 0.5s ease-in-out"
-document.getElementsByClassName("load-cover")[0].addEventListener("animationend", function(event){
-event.target.remove()
-})
-}, 1500)})
+window.addEventListener("resize",function(){dimensions=document.getElementsByClassName("card-container")[0].parentNode.getBoundingClientRect();document.getElementsByClassName("card-container")[0].style.height="0px";document.getElementsByClassName("card-container")[0].style.width="0px";8.25*dimensions.width>11.75*dimensions.height?(document.getElementsByClassName("card-container")[0].style.height=.9*dimensions.height+"px",document.getElementsByClassName("card-container")[0].style.width=.9*dimensions.height*
+11.75/8.25+"px"):(document.getElementsByClassName("card-container")[0].style.height=7.425*dimensions.width/11.75+"px",document.getElementsByClassName("card-container")[0].style.width=.9*dimensions.width+"px")});window.dispatchEvent(new Event("resize"));
+document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){document.getElementsByClassName("load-cover")[0].style.animation="fade 0.5s ease-in-out";document.getElementsByClassName("load-cover")[0].addEventListener("animationend",function(a){a.target.remove()})},1500)});
 </script>
 </html>
