@@ -212,7 +212,7 @@ function toggleFullScreen() {
   }
 }
 document.querySelector("button").addEventListener("click", function(event){
-if (document.getElementsByClassName("flip-card-inner")[0].style.transform=="translate(0, 0) rotateY(-179.999deg)" || document.getElementsByClassName("flip-card-inner")[0].style.transform=="translate(0px, 0px) rotateY(-179.999deg)"){
+if (parseInt(document.getElementsByClassName("flip-card-inner")[0].style.transform.replace(/[^0-9\.-]/g, ""))==0){
 document.getElementsByClassName("flip-card-inner")[0].style.transform="translate(0, 0) rotateY(0deg)"
 setTimeout(function(){
 document.getElementsByClassName("show-hide")[0].style.display="none"
