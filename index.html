@@ -43,7 +43,7 @@ Your browser does not support audio. Tested on chrome and Microsoft Edge.
 </div>
 </div>
 <div style="margin:15px;margin-bottom:25px;margin-top:0;flex:0;">
-<button style="font-size:32pt;padding:10px 20px;border-radius:7.5px;background-color:red;color:white;border:5px solid salmon">Next &gt;</button>
+<button style="font-size:32pt;font-weight:bold;padding:10px 20px;border-radius:7.5px;background-color:red;color:white;border:5px solid salmon">Next &gt;</button>
 </div>
 <script>
 document.addEventListener("keypress",function(a){13===a.keyCode&&((a.preventDefault(),document.fullscreenElement)?document.exitFullscreen&&(document.exitFullscreen(),setTimeout(function(){window.dispatchEvent(new Event("resize"))}, 250),document.querySelector("h1").innerHTML='Press the "Enter" key to enter full screen.'):(document.documentElement.requestFullscreen(),window.dispatchEvent(new Event("resize")),document.querySelector("h1").innerHTML='Press the "Enter" key to exit full screen.'))},!1);
